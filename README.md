@@ -19,6 +19,62 @@ Small business owners often struggle to maintain consistent visual identity, com
 
 ---
 
+## 🤖 Generative AI (Gen-AI) Architecture & Implementation
+
+MyBrand AI is built entirely on modern **Multimodal Generative AI** using the official Google GenAI SDK (`@google/genai`).
+
+```
+           ┌──────────────────────────────────────────────┐
+           │        MULTIMODAL INPUT TO GEN-AI            │
+           │  • Business Name, Type, Location, Audience   │
+           │  • Brand Style & Tone Requirements           │
+           │  • Base64 Business Images (Multimodal Vision)│
+           │  • Past Performance Feedback Metrics         │
+           └──────────────────────┬───────────────────────┘
+                                  │
+                                  ▼
+           ┌──────────────────────────────────────────────┐
+           │          GOOGLE GEMINI GEN-AI ENGINE         │
+           │  • Model: gemini-2.5-flash / gemini-2.0-flash│
+           │  • Persona: Expert Brand Strategist          │
+           │  • Mode: Structured JSON Schema Enforcement  │
+           └──────────────────────┬───────────────────────┘
+                                  │
+                                  ▼
+           ┌──────────────────────────────────────────────┐
+           │          GENERATED AI ARTIFACTS              │
+           │  🎨 Brand DNA & 5-Color HEX Palette          │
+           │  🔤 Typography & Font Pairings               │
+           │  ✨ Logo Direction & Variation Concepts      │
+           │  📅 7-Day Multi-Channel Social Calendar      │
+           │  ✍️ Landing Page Copy, Headlines & Taglines  │
+           │  📱 High-Converting Google & Facebook Ads    │
+           │  🎬 Viral TikTok & Short-Form Video Scripts  │
+           │  📧 3-Part Automated Email Nurture Sequence  │
+           │  🖼️ High-Detail AI Image Prompts             │
+           └──────────────────────────────────────────────┘
+```
+
+### Key Gen-AI Capabilities Used:
+
+1. **Multimodal Vision Ingestion**:
+   - The AI ingests 1–5 raw photos (JPG, PNG, WebP) uploaded by the user.
+   - Extracts ambient lighting, color tones, aesthetic mood, and store/product details to ground the generation.
+
+2. **Strict Structured JSON Schema**:
+   - Uses `responseMimeType: "application/json"` and `responseSchema` with `@google/genai` to guarantee 100% type-safe, parseable generative JSON output.
+
+3. **System Persona & Prompt Engineering**:
+   - Acts as a senior creative director and conversion copywriter.
+   - Tailors messaging, tone, and humor to the specific location, industry, and demographic.
+
+4. **Multi-Model Fallback & High Reliability**:
+   - Primary: `gemini-2.5-flash` for state-of-the-art multimodal reasoning.
+   - Fallback: `gemini-2.0-flash` for high-throughput generation.
+   - Tailored Rule-Based Synthesis: Ensures zero-downtime availability.
+
+---
+
 ## ✨ Core Features
 
 ### 1. 🎨 Visual Brand Kit & Brand DNA
